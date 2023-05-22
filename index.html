@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arguments</title>
+</head>
+<body>
+    <h1>Utilizando arguments</h1>
+    <script>
+        function somar (n1,n2,n3,n4){
+            return n1+n2+n3+n4;
+        }
+
+        var soma = somar(5, 4, 5, 3,);
+        console.log('resultado:', soma);
+
+        function media (n1,n2,n3,n4){
+            return (n1+n2+n3+n4)/4;
+        }
+        
+        console.log('média:',media(10,20,30,40));
+
+       function somar2 (){
+        console.log(arguments);
+        var result = 0;
+        var x = 0;
+
+        while (arguments[x]){
+            result += arguments[x];
+            x++;
+        }
+       console.log('resultado:', result)
+    } 
+    somar2 (12, 14, 10, 23, 12, 3, 9, 14, 13, 11);
+
+   function calcularMedia(){
+    var total = 0;
+    var qtd = arguments.length;
+    var x = 0;
+
+    while(typeof arguments[x] === 'number'){
+        total += arguments[x];
+        x++;
+    }
+     return total/qtd;
+   }
+   var media1 = calcularMedia (10, 20);
+   var media2 = calcularMedia (10, 20, 30, 40);
+   var media3 = calcularMedia (0, 20, 30, 40, 5);
+   console.log('media1:', media1)
+   console.log('media2:', media2)
+   console.log('media3:',media3)
+    </script>
+</body>
+</html>
